@@ -42,6 +42,8 @@ import { Register } from './pages/Register';
 import { Login } from './pages/Login';
 import { Service } from './pages/Service';
 import Navbar from './components/Navbar';
+import { Error } from './pages/Error';
+import { Footer } from './components/Footer';
 const App = () =>{
   return(
   <>
@@ -54,7 +56,9 @@ const App = () =>{
    <Route path="/register" element ={<Register/>}/>
    <Route path="/login" element ={<Login/>}/>
    <Route path="/service" element ={<Service/>}/>
+   <Route path="*" element ={<Error/>}/>
   </Routes>
+  <Footer/>
   </BrowserRouter>
   </>);
 };

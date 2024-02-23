@@ -1,0 +1,41 @@
+/* Navbar.css */
+
+/* Global styles */
+/* ... (existing global styles) ... */
+
+/* Navbar specific styles */
+/* Customize the top row styles here */
+.header {
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem; /*Adjust padding as needed*/
+    background-color: var(--first-color); /* Customize the background color */
+}
+
+.logo-brand {
+    font-family: var(--second-font);
+    font-size: 1.5rem;
+    color: var(--title-color); /* Customize the logo color */
+}
+
+nav ul {
+    display: flex;
+    gap: 1rem; /* Adjust spacing between navigation links */
+    list-style: none;
+}
+
+nav li {
+    font-size: 1rem;
+}
+
+nav a {
+    color: var(--text-color); /* Customize the link color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--first-color); /* Customize the link color on hover */
+}
