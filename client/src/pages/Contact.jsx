@@ -6,6 +6,37 @@ export const Contact = () => {
     email: "",
     message: "",
   });
+  const [user ,setUser] = useState({});
+  const [userData,setUserData] = useState(true);
+  const token = localStorage.getItem("token");
+  const userAuthentication = async() =>{
+    try {
+      const response = await fetch("http://localhost:5000/api/auth/user",{
+        method: "GET",
+        headers:{
+          Authorization: `Bearer ${token}`,
+        },
+      });
+                              
+      if (response.ok) {
+        const data = await response.json();
+        setUser(data.userData);  
+      } 
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  if (userData && user) {
+    setContact({
+      name : user.username,
+      email : user.email,
+      message : "",
+    });
+    setUserData(false);
+  }
+
+
 
   // lets tackle our handleInput
   const handleInput = (e) => {
@@ -26,7 +57,7 @@ export const Contact = () => {
   };
 
 //  Help me reach 1 Million subs 👉 https://youtube.com/thapatechnical
-
+userAuthentication();
   return (
     <>
       <section className="section-contact">

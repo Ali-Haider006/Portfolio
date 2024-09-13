@@ -1,0 +1,92 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.nav a:hover {
+  color: #007bff;
+}
+
+/* Hero Section Styles */
+.hero-section {
+  background-color: #f9f9f9;
+  padding: 40px 0;
+}
+
+.hero-images {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hero-images img {
+  width: 32%;
+  border-radius: 10px;
+}
+
+/* Create Environment Section */
+.create-environment-section {
+  text-align: center;
+  padding: 40px 0;
+  background-color: #fff;
+}
+
+.create-environment-section h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.environment-icons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.icon {
+  text-align: center;
+}
+
+.icon img {
+  width: 80px;
+  height: 80px;
+}
+
+.icon p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #333;
+}

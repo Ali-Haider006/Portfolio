@@ -1,7 +1,9 @@
 import '../App.css'
 import { useState } from 'react'
-
+import {useNavigate} from 'react-router-dom'
 export const Login = ()=>{
+    const navigate = useNavigate();
+
     const [user, setUser] = useState(
         { 
          email : "",
@@ -16,12 +18,39 @@ export const Login = ()=>{
          setUser({
              ...user,
              [name]:value,
-         })
-     }
- 
-     const HandleForm = (e)=>{
+            })
+        }
+        
+        const storeTokenInLS = (serverToken) =>{
+            return localStorage.setItem('token',serverToken);
+        } ;
+     const HandleForm = async(e)=>{
          e.preventDefault();
-         alert(user);
+        //  alert(user);
+        try {
+            const response = await fetch('http://localhost:5000/api/auth/login',{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json",
+            },
+            body:JSON.stringify(user),
+        }
+        );
+        if (response.ok) {
+            setUser({ 
+            email : "",
+            password:""}
+            
+            );
+        storeTokenInLS(response.json().token);
+        alert("Login successful");
+        navigate("/");
+        }else{
+            alert("Invalid email or password")
+        } }
+        catch (error) {
+            console.log("register", error);
+        }
      };
     return <>
     <h1>Login page</h1>

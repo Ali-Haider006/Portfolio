@@ -1,5 +1,7 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import {useNavigate} from 'react-router-dom'
 import '../App.css'
+//  import {useAuth} from '../store/auth'
 export const Register = ()=>{
     const [user, setUser] = useState(
        { username : "",
@@ -17,11 +19,34 @@ export const Register = ()=>{
             [name]:value,
         })
     }
-
-    const HandleForm = (e)=>{
+    const navigate = useNavigate();
+    const storeTokenInLS = (serverToken) =>{
+        return localStorage.setItem('token',serverToken);
+    } ;
+    // const storeTokenInLS = useAuth();
+    const HandleForm = async (e)=>{
         e.preventDefault();
-        alert(user);
-    }
+        // alert(user);
+        try {
+            const response = await fetch('http://localhost:5000/api/auth/register',{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json",
+            },
+            body:JSON.stringify(user),
+        }
+        );
+        if (response.ok) {
+            setUser({ username : "",
+            email : "",
+            phone:"",
+            password:""});
+        storeTokenInLS(response.json().token);
+        navigate("/login");
+        } }
+        catch (error) {
+            console.log("register", error);
+        }};
 
     return <>
     <section>
@@ -65,4 +90,4 @@ export const Register = ()=>{
         </main>
     </section>
     </>
-}
+    }

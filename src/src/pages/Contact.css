@@ -1,0 +1,98 @@
+.contact-header {
+  background-image: url("./contactus.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* Changed to flex-end to lower the text */
+  padding-bottom: 20px; /* Added padding to further lower the text */
+  color: white;
+}
+
+.main-heading {
+  font-size: 50px; /* Corrected the unit from 50x to 50px */
+  text-align: center;
+  color: rgb(249, 247, 247); /* Set the text color to white */
+}
+
+.contact-section {
+  background-color: white;
+  padding: 50px 0;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.contact-content {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.contact-info p {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.form-container {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.form-heading {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white; /* Make input background white */
+  color: black; /* Ensure text color is black for contrast */
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #888; /* Placeholder text color */
+}
+
+.form-group button {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-group button:hover {
+  background-color: #0056b3;
+}
+
+.map-section iframe {
+  width: 100%;
+  border: none;
+}

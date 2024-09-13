@@ -7,10 +7,16 @@ const app = express();
 const router = require('./router/auth-router');
 const connectDb = require('./utils/db');
 const errorMiddleware = require('./middleware/error-middleware');
+const cors = require('cors');
+var corsOptions = {
+    origin: 'http://localhost:5173',
+    methods:"GET,POST,PUT,DELETE,PATCH,HEAD",
+    credentials:"true",
+  };
+app.use(cors(corsOptions));
 
 app.use(express.json());
 app.use("/api/auth", router);
-
 // app.get('/', (req,res)=>{
 // res.status(200).send('Welcome');
 // });

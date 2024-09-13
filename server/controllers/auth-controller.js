@@ -56,5 +56,14 @@ const register = async(req,res)=>{
                     next(error);
                 }    };
 
+ const user = async(req,res) => {
+    try {
+        const userData = req.user
+        console.log(userData);
+        res.status(200).json({userData});
 
-module.exports = {home,register,login,contact};
+    } catch (error) {
+        console.log(`error from user ${error}`);
+    }
+ }
+module.exports = {home,register,login,contact,user};

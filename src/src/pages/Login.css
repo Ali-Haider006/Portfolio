@@ -1,0 +1,140 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.login-container {
+  display: flex;
+  height: 100vh;
+  width: 90vw;
+}
+
+.login-image {
+  flex: 1;
+  background-image: url("../assets/login.jpg");
+    background-size: cover;
+  background-position: center;
+  /*transform: rotate(+3deg); /* Tilt the image */
+}
+
+.login-form-container {
+  flex: 0.9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: #fff;
+}
+
+h1 {
+  margin-bottom: 4rem;
+  font-size: 2rem;
+  color: #333;
+  text-align: center;
+}
+
+hr {
+  width: 10%; /* Reduced width of the line */
+  margin-bottom: 9rem; /* Adjusted margin */
+  border: 0;
+  border-top: 1px solid #ccc;
+}
+
+.input-group {
+  margin-bottom: 2rem; /* Increased margin for spacing */
+  width: 95%; /* Reduced width */
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 1rem; /* Increased padding for larger input */
+  transition: border-color 0.3s;
+}
+
+.input-group input {
+  width: 70%;
+  padding: 0.75rem; /* Larger padding */
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #333;
+}
+
+.input-group label {
+  position: absolute;
+  left: 1rem;
+  top: 1rem; /* Adjusted to match input padding */
+  color: #999;
+  pointer-events: none;
+  transition: all 0.2s;
+}
+
+.input-group.focused label,
+.input-group input:not(:placeholder-shown) + label {
+  top: -0.75rem;
+  left: 0.75rem;
+  font-size: 0.85rem;
+  color: #007bff;
+  background: #fff;
+  padding: 0 0.25rem;
+}
+
+.input-group.focused {
+  border-color: #007bff;
+}
+
+.forgot-password {
+  font-size: 0.75rem; /* Smaller font size */
+  width: 60%; /* Adjusted width to match input box */
+  text-align: left; /* Align to the left */
+  margin-top: -0.5rem; /* Adjusted margin to move closer to the password box */
+  margin-bottom: 1.5rem; /* Added margin to space it out from the button */
+  padding-left: 1rem; /* Padding to align with input box */
+}
+
+.forgot-password a {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 0.75rem; /* Smaller font size */
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+.btn-submit {
+  width: 60%; /* Adjusted width to match input box */
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  background-color: #2927b9;
+  color: white;
+  border: none;
+  border-radius: 12px; /* More rounded corners */
+  cursor: pointer;
+  font-weight: bold; /* Bold text */
+  margin-bottom: 1rem; /* Added margin to space it out from the error message */
+}
+
+.btn-submit:hover {
+  background-color: #2100b3;
+}
+
+.error {
+  color: red;
+  margin-top: 1rem;
+}
+
+p {
+  margin-top: 2rem;
+  color: #333;
+}
+
+p a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+p a:hover {
+  text-decoration: underline;
+}

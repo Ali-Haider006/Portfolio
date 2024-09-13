@@ -44,6 +44,7 @@ import { Service } from './pages/Service';
 import Navbar from './components/Navbar';
 import { Error } from './pages/Error';
 import { Footer } from './components/Footer';
+import Logout from './pages/Logout';
 const App = () =>{
   return(
   <>
@@ -56,6 +57,7 @@ const App = () =>{
    <Route path="/register" element ={<Register/>}/>
    <Route path="/login" element ={<Login/>}/>
    <Route path="/service" element ={<Service/>}/>
+   <Route path="/logout" element ={<Logout/>}/>
    <Route path="*" element ={<Error/>}/>
   </Routes>
   <Footer/>
